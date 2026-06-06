@@ -12,10 +12,14 @@ export default function Experience() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-sm font-semibold tracking-[0.25em] uppercase text-cyan-500">
+            {/* Gold eyebrow */}
+            <span
+              className="text-sm font-semibold tracking-[0.25em] uppercase"
+              style={{ color: "var(--gold)" }}
+            >
               About Me
             </span>
             <h2 className="mt-3 font-heading font-bold text-3xl md:text-4xl text-slate-900 mb-6">
@@ -39,14 +43,14 @@ export default function Experience() {
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
 
-            {/* Strategic Vision callout */}
+            {/* Strategic Vision callout — gold icon accent */}
             <div
               className="flex items-start gap-4 p-5 rounded-xl border-l-4"
-              style={{ borderColor: "#06b6d4", background: "linear-gradient(135deg, #eff6ff, #ecfeff)" }}
+              style={{ borderColor: "var(--gold)", background: "linear-gradient(135deg, #fffbeb, #fefce8)" }}
             >
               <div
                 className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-white"
-                style={{ background: "linear-gradient(135deg,#1e3a8a,#06b6d4)" }}
+                style={{ background: "linear-gradient(135deg, var(--gold-dark), var(--gold-light))" }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -68,11 +72,10 @@ export default function Experience() {
             className="relative"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
           >
             <div className="relative">
-              {/* Gradient border frame */}
               <div
                 className="absolute -inset-3 rounded-2xl opacity-70"
                 style={{ background: "linear-gradient(135deg,#1e3a8a,#06b6d4)" }}
@@ -85,12 +88,9 @@ export default function Experience() {
                   className="object-cover"
                 />
               </div>
-              {/* Floating stat */}
+              {/* Gold "500+" badge */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-5 shadow-xl">
-                <p
-                  className="text-4xl font-bold font-heading"
-                  style={{ color: "#1e3a8a" }}
-                >
+                <p className="text-4xl font-bold font-heading" style={{ color: "var(--gold)" }}>
                   500+
                 </p>
                 <p className="text-xs text-slate-500 font-medium mt-1">Clients Served</p>

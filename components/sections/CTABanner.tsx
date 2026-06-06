@@ -6,13 +6,11 @@ import Image from "next/image";
 export default function CTABanner() {
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Background gradient */}
+      {/* Navy/blue gradient background — unchanged */}
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(135deg, #0f1f4b 0%, #1e3a8a 50%, #0891b2 100%)" }}
       />
-
-      {/* Geometric pattern overlay */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -35,10 +33,14 @@ export default function CTABanner() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-sm font-semibold tracking-[0.25em] uppercase text-cyan-400">
+          {/* Gold eyebrow */}
+          <span
+            className="text-sm font-semibold tracking-[0.25em] uppercase"
+            style={{ color: "var(--gold)" }}
+          >
             Start Today
           </span>
           <h2 className="mt-3 font-heading font-bold text-3xl md:text-5xl mb-4">
@@ -48,10 +50,11 @@ export default function CTABanner() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
+          {/* "Request a Consultation" stays blue — unchanged */}
           <a
             href="#contact"
-            className="inline-block px-10 py-4 rounded-full font-semibold text-navy-900 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/30 text-lg"
-            style={{ color: "#0f1f4b" }}
+            className="inline-block px-10 py-4 rounded-full font-semibold text-white transition-opacity hover:opacity-90 shadow-lg text-lg"
+            style={{ background: "linear-gradient(135deg,#1e3a8a,#06b6d4)" }}
           >
             Request a Consultation
           </a>

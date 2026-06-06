@@ -24,6 +24,11 @@ const config: Config = {
           from: "#1e3a8a",
           to: "#06b6d4",
         },
+        gold: {
+          DEFAULT: "#c9a227",
+          light:   "#e0b94d",
+          dark:    "#a8861c",
+        },
       },
       backgroundImage: {
         "brand-gradient": "linear-gradient(135deg, #1e3a8a 0%, #06b6d4 100%)",

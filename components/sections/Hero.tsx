@@ -20,7 +20,6 @@ export default function Hero() {
           className="absolute bottom-0 left-1/4 w-72 h-72 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #1d4ed8, transparent 70%)" }}
         />
-        {/* Diagonal slash accent */}
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -38,35 +37,67 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          {/* Gold eyebrow */}
           <motion.span
-            className="inline-block text-cyan-400 text-sm font-semibold tracking-[0.25em] uppercase mb-4"
+            className="inline-block text-sm font-semibold tracking-[0.25em] uppercase mb-4"
+            style={{ color: "var(--gold)" }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Strategy & Management Consulting
+            Strategy &amp; Management Consulting
           </motion.span>
+
           <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
             Providing The{" "}
-            <span className="text-cyan-400">Expert Advice</span>{" "}
+            {/* Gold highlighted words */}
+            <span style={{ color: "var(--gold-light)" }}>Expert Advice</span>{" "}
             You Always Need.
           </h1>
+
           <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam quis nostrud exercitation.
           </p>
+
           <div className="flex flex-wrap gap-4">
+            {/* Gold outline buttons */}
             <a
               href="#about"
-              className="px-8 py-3.5 rounded-full font-semibold text-navy-900 bg-cyan-400 hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/30"
-              style={{ color: "#0f1f4b" }}
+              className="px-8 py-3.5 rounded-full font-semibold transition-all duration-200 border-2"
+              style={{
+                color: "var(--gold)",
+                borderColor: "var(--gold)",
+                background: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "var(--gold)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#0f1f4b";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--gold)";
+              }}
             >
               Read More
             </a>
             <a
               href="#contact"
-              className="px-8 py-3.5 rounded-full font-semibold text-white border-2 border-white/40 hover:border-cyan-400 hover:text-cyan-400 transition-colors"
+              className="px-8 py-3.5 rounded-full font-semibold transition-all duration-200 border-2"
+              style={{
+                color: "var(--gold)",
+                borderColor: "var(--gold)",
+                background: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "var(--gold)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#0f1f4b";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                (e.currentTarget as HTMLAnchorElement).style.color = "var(--gold)";
+              }}
             >
               Contact Us
             </a>
@@ -81,7 +112,6 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div className="relative w-72 h-96 lg:w-80 lg:h-[28rem]">
-            {/* Gradient frame */}
             <div
               className="absolute -inset-1 rounded-2xl"
               style={{ background: "linear-gradient(135deg, #06b6d4, #1e3a8a)" }}
@@ -95,11 +125,11 @@ export default function Hero() {
                 priority
               />
             </div>
-            {/* Floating stat card */}
-            <div
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl"
-            >
-              <p className="text-3xl font-bold font-heading" style={{ color: "#1e3a8a" }}>20+</p>
+            {/* Gold "20+" badge */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl">
+              <p className="text-3xl font-bold font-heading" style={{ color: "var(--gold)" }}>
+                20+
+              </p>
               <p className="text-xs text-slate-500 font-medium">Years Experience</p>
             </div>
           </div>

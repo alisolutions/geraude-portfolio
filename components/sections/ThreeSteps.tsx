@@ -27,14 +27,19 @@ export default function ThreeSteps() {
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-sm font-semibold tracking-[0.25em] uppercase text-cyan-500">
+          {/* Gold eyebrow */}
+          <span
+            className="text-sm font-semibold tracking-[0.25em] uppercase"
+            style={{ color: "var(--gold)" }}
+          >
             How It Works
           </span>
           <h2 className="mt-3 font-heading font-bold text-3xl md:text-4xl text-slate-900">
@@ -49,38 +54,49 @@ export default function ThreeSteps() {
               className="relative group p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-shadow duration-300 bg-white overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
             >
-              {/* Large accent number */}
+              {/* Large faint gold background numeral */}
               <span
-                className="absolute -top-4 -right-2 text-9xl font-bold font-heading select-none opacity-[0.06] transition-opacity group-hover:opacity-[0.1]"
-                style={{ color: "#1e3a8a" }}
+                className="absolute -top-4 -right-2 text-9xl font-bold font-heading select-none transition-opacity group-hover:opacity-[0.12]"
+                style={{ color: "var(--gold)", opacity: 0.08 }}
               >
                 {step.number}
               </span>
 
-              {/* Number pill */}
+              {/* Gold badge pill — gold bg, navy text */}
               <span
-                className="inline-block text-xs font-bold tracking-widest px-3 py-1 rounded-full text-white mb-4"
-                style={{ background: "linear-gradient(135deg,#1e3a8a,#06b6d4)" }}
+                className="inline-block text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-4"
+                style={{ background: "var(--gold)", color: "#0f1f4b" }}
               >
                 {step.number}
               </span>
 
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-500 mb-2">
+              {/* Gold eyebrow label */}
+              <p
+                className="text-xs font-semibold uppercase tracking-widest mb-2"
+                style={{ color: "var(--gold)" }}
+              >
                 {step.eyebrow}
               </p>
+
               <h3 className="font-heading font-bold text-xl text-slate-900 mb-4">
                 {step.title}
               </h3>
-              <p className="text-slate-500 leading-relaxed text-sm mb-6">
-                {step.body}
-              </p>
+              <p className="text-slate-500 leading-relaxed text-sm mb-6">{step.body}</p>
+
+              {/* Gold "Read More →" link */}
               <a
                 href="#about"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-navy-800 hover:text-cyan-500 transition-colors"
-                style={{ color: "#1e3a8a" }}
+                className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+                style={{ color: "var(--gold)" }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLAnchorElement).style.color = "var(--gold-dark)")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLAnchorElement).style.color = "var(--gold)")
+                }
               >
                 Read More
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,10 +104,10 @@ export default function ThreeSteps() {
                 </svg>
               </a>
 
-              {/* Bottom gradient line on hover */}
+              {/* Gold bottom hover line */}
               <div
                 className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl"
-                style={{ background: "linear-gradient(90deg,#1e3a8a,#06b6d4)" }}
+                style={{ background: "linear-gradient(90deg, var(--gold-dark), var(--gold-light))" }}
               />
             </motion.div>
           ))}

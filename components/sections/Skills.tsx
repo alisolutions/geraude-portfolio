@@ -19,7 +19,7 @@ const checklist = [
 
 function ProgressBar({ label, value }: { label: string; value: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -33,7 +33,8 @@ function ProgressBar({ label, value }: { label: string; value: number }) {
     <div ref={ref} className="mb-6">
       <div className="flex justify-between mb-2">
         <span className="text-sm font-semibold text-slate-700">{label}</span>
-        <span className="text-sm font-bold" style={{ color: "#06b6d4" }}>
+        {/* Gold percentage */}
+        <span className="text-sm font-bold" style={{ color: "var(--gold)" }}>
           {inView ? value : 0}%
         </span>
       </div>
@@ -42,7 +43,7 @@ function ProgressBar({ label, value }: { label: string; value: number }) {
           className="h-full rounded-full transition-all duration-1000 ease-out"
           style={{
             width: `${width}%`,
-            background: "linear-gradient(90deg,#1e3a8a,#06b6d4)",
+            background: "linear-gradient(90deg, var(--gold-dark), var(--gold-light))",
           }}
         />
       </div>
@@ -59,10 +60,14 @@ export default function Skills() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-sm font-semibold tracking-[0.25em] uppercase text-cyan-500">
+            {/* Gold eyebrow */}
+            <span
+              className="text-sm font-semibold tracking-[0.25em] uppercase"
+              style={{ color: "var(--gold)" }}
+            >
               Skills
             </span>
             <h2 className="mt-3 font-heading font-bold text-3xl md:text-4xl text-slate-900 mb-6">
@@ -80,13 +85,13 @@ export default function Skills() {
               ad minim veniam, quis nostrud exercitation ullamco laboris.
             </p>
 
-            {/* Checklist */}
+            {/* Checklist with gold check icons */}
             <ul className="space-y-3">
               {checklist.map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <span
                     className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg,#1e3a8a,#06b6d4)" }}
+                    style={{ background: "linear-gradient(135deg, var(--gold-dark), var(--gold-light))" }}
                   >
                     <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -102,12 +107,10 @@ export default function Skills() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
           >
-            <div
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-100"
-            >
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
               <h3 className="font-heading font-bold text-xl text-slate-900 mb-8">
                 Core Competencies
               </h3>
